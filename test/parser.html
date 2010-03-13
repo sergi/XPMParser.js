@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <script src="../js/parser.js"></script>
+  <script>
+    var loadFile = function(url) {
+        var txtFile = new XMLHttpRequest();
+        txtFile.open("GET", url, false);
+        txtFile.send(null);
+        if (txtFile.status == 0 || txtFile.status == 200)
+            return txtFile.responseText;
+        else
+            return null;
+    }
+    var t = function() {
+      var test = new XPMParser();
+      document.body.appendChild(test.read(loadFile("billA_4.xpm")));
+    }
+  </script></head>
+  <body onload="t()">
+  </body>
+</html>
